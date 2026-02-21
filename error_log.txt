@@ -1,0 +1,20 @@
+﻿============================================================
+Testing Native Tensor Parallel Refactor
+============================================================
+Device: cuda
+
+--- Generating test data ---
+Topos shape: torch.Size([8, 5, 5])
+Pop_data shape: torch.Size([8, 5, 50, 42])
+Details D: 100
+Pop_data last dim: 42 (expected 42) OK
+
+--- Running batched DECC ---
+Results shape: torch.Size([8])
+Results: ['1.3978e+09', '1.6463e+09', '9.1051e+08', '1.9118e+09', '2.2982e+09', '2.5143e+09', '2.1261e+09', '1.1472e+09']
+Time: 0.23s
+Speed: 29 ms/sample
+
+============================================================
+OK: Native Tensor Parallel Refactor test passed!
+============================================================

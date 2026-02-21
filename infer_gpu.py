@@ -69,7 +69,8 @@ def load_trained_model(model_path: str, device: torch.device) -> nn.Module:
         num_heads=cfg.NUM_HEADS,
         pop_size=cfg.POP_SIZE,
         groupsize=cfg.GROUPSIZE,
-        use_landscape=bool(getattr(cfg, 'USE_LANDSCAPE', True))
+        use_landscape=bool(getattr(cfg, 'USE_LANDSCAPE', True)),
+        edge_head_dim=getattr(cfg, 'EDGE_HEAD_DIM', 64)
     ).to(device)
     
     # 加载 Float32 训练的权重
